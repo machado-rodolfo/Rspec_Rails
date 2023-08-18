@@ -34,6 +34,11 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
 
+  #Retirar Warnings
+  config.before(:suite) do
+    Warning[:deprecated] = false
+  end
+
   # FactoryBot
   config.include FactoryBot::Syntax::Methods
 
